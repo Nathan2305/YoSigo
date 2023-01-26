@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">YoSigo</string>
+    <string name="elejir_opcion">Bienvenid@, \nelija una opción</string>
+    <string name="ingresar_empresa">Ingresar como entidad \n prestadora de servicios</string>
+    <string name="ingresar_usuario">Ingresar como usuario</string>
+    <string name="que_significa">¿Que significa?</string>
+    <string name="txtAsService">Significa que te registrarás como alguna empresa o servicio que haga uso</string>
+    <string name="txtAsUser">Significa que ingresarás como usuario para hacer uso de los servicios de la empresa</string>
+</resources>
