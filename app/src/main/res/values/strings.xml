@@ -6,4 +6,10 @@
     <string name="que_significa">¿Que significa?</string>
     <string name="txtAsService">Significa que te registrarás como alguna empresa o servicio que haga uso</string>
     <string name="txtAsUser">Significa que ingresarás como usuario para hacer uso de los servicios de la empresa</string>
+    <string name="nombre_de_la_empresa">Nombre de la empresa</string>
+    <string name="email">Email</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="repetir_contrasena">Repetir contraseña</string>
+    <string name="fabRegister">fabRegister</string>
+    <string name="registrate_como_empresa">Registrate como empresa</string>
 </resources>

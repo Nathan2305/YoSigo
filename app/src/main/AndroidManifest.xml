@@ -13,15 +13,6 @@
         android:theme="@style/Theme.YoSigo"
         tools:targetApi="31">
         <activity
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:name=".MainLoginEnterAsService"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

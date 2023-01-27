@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape android:shape="rectangle" xmlns:android="http://schemas.android.com/apk/res/android">
+<<<<<<< HEAD
     <corners android:radius="40dp"/>
+=======
+    <corners android:radius="20dp"/>
+>>>>>>> 0cb34f3 (AVANZANDO REGISTRO)
     <gradient android:startColor="@color/secondary"
         android:endColor="@color/primary"/>
 </shape>

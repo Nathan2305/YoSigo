@@ -2,10 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootConstraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_as_service_background"
-    tools:context=".MainLoginEnterAsService">
+    tools:context=".view.activities.MainLoginEnterAsService">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gLineLeft"
@@ -47,7 +48,20 @@
         app:layout_constraintStart_toStartOf="@id/gLineLeft"
         app:layout_constraintTop_toBottomOf="@id/txtEmail" />
 
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/spinkitLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:SpinKit_Color="@color/white"
+        app:SpinKit_Style="ThreeBounce"
+        app:layout_constraintBottom_toTopOf="@id/btnLogin"
+        app:layout_constraintEnd_toEndOf="@id/txtPasswd"
+        app:layout_constraintStart_toStartOf="@id/txtPasswd"
+        app:layout_constraintTop_toBottomOf="@id/txtPasswd" />
+
     <Button
+        android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/secondary"
@@ -57,5 +71,30 @@
         app:layout_constraintEnd_toStartOf="@+id/gLineRight"
         app:layout_constraintStart_toStartOf="@+id/gLineLeft"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.97" />
+        app:layout_constraintVertical_bias="0.85"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/txtRegisterLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrate"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/btnLogin"
+        app:layout_constraintTop_toBottomOf="@id/btnLogin"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/txtForgetPasswdLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Olvidaste tu contraseña?"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/btnLogin"
+        app:layout_constraintTop_toBottomOf="@id/btnLogin"
+        app:layout_constraintVertical_bias="0.8" />
 </androidx.constraintlayout.widget.ConstraintLayout>

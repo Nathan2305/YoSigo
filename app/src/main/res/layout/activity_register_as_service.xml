@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootConstraint"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_as_service_background"
+    tools:context=".view.activities.RegisterAsServiceActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="@string/registrate_como_empresa"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@+id/lLayout"
+        app:layout_constraintStart_toStartOf="@id/gLineLeft"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <LinearLayout
+        android:id="@+id/lLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/LineRight"
+        app:layout_constraintStart_toStartOf="@id/gLineLeft"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/txtBusinessName"
+            style="@style/editTextLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_twotone_business_24"
+            android:hint="@string/nombre_de_la_empresa"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/txtEmail"
+            style="@style/editTextLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_twotone_email_24"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/txtPassword"
+            style="@style/editTextLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_twotone_vpn_key_24"
+            android:hint="@string/contrasena"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/txtPasswordAgain"
+            style="@style/editTextLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_twotone_vpn_key_24"
+            android:hint="@string/repetir_contrasena"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gLineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/LineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/fabRegister"
+        android:src="@drawable/ic_twotone_app_registration_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/lLayout"
+        app:layout_constraintTop_toBottomOf="@id/lLayout"
+        app:maxImageSize="40dp" />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/spinkitLoading"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:SpinKit_Style="ThreeBounce"
+        app:layout_constraintBottom_toTopOf="@id/fabRegister"
+        app:layout_constraintEnd_toEndOf="@id/lLayout"
+        app:layout_constraintStart_toStartOf="@id/lLayout"
+        app:layout_constraintTop_toBottomOf="@id/lLayout" />
+</androidx.constraintlayout.widget.ConstraintLayout>
