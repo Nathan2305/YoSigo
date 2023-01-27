@@ -2,8 +2,10 @@
 <resources>
 
     <style name="buttonMainActivity" parent="@style/Widget.AppCompat.Button">
-        <item name="android:background">@drawable/selector_button</item>
-        <item name="elevation">10dp</item>
+
+         <item name="elevation">10dp</item>
+        <item name="android:background">@drawable/rounded_button</item>
+)
         <item name="android:textSize">16sp</item>
     </style>
 
@@ -12,4 +14,14 @@
         <item name="android:textSize">18sp</item>
         <item name="android:layout_marginTop">5dp</item>
     </style>
+
+
+    <style name="editTextLogin" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_text_login</item>
+        <item name="android:padding">18dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+    </style>
+>>>>>>> 76002d2 (first commit)
 </resources>

@@ -1,5 +1,8 @@
 package nathan.badlogic.yosigo
 
+
+import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -32,6 +35,11 @@ class MainActivity : AppCompatActivity() {
         txtViewAsService.setOnClickListener {
             val msg = resources.getString(R.string.txtAsService)
             showSnackBar(msg)
+        }
+
+        btnEnterAsService.setOnClickListener {
+            val intent=Intent(this,MainLoginEnterAsService::class.java)
+            startActivity(intent)
         }
 
     }

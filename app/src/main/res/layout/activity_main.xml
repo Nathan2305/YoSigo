@@ -48,10 +48,10 @@
 
     <TextView
         android:id="@+id/txtViewAsService"
+        style="@style/textMainActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/que_significa"
-        style="@style/textMainActivity"
         app:layout_constraintEnd_toEndOf="@id/btnEnterAsService"
         app:layout_constraintTop_toBottomOf="@id/btnEnterAsService" />
 
@@ -60,19 +60,24 @@
         style="@style/buttonMainActivity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+
         android:background="@drawable/rounded_button"
+
+
         android:text="@string/ingresar_usuario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/gLineRight"
         app:layout_constraintStart_toStartOf="@id/gLineLeft"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.7" />
+
+
     <TextView
         android:id="@+id/txtViewAsUser"
+        style="@style/textMainActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/que_significa"
-        style="@style/textMainActivity"
         app:layout_constraintEnd_toEndOf="@id/btnEnterAsUser"
         app:layout_constraintTop_toBottomOf="@id/btnEnterAsUser" />
 </androidx.constraintlayout.widget.ConstraintLayout>
