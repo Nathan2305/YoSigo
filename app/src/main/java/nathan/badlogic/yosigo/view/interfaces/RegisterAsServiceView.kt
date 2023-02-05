@@ -4,5 +4,6 @@ interface RegisterAsServiceView {
     abstract fun notifyViewShowMessage(msg: String)
     fun notifyViewShowLoading()
     fun notifyViewStopLoading()
-    fun notifyViewSuccessfulRegister()
+    fun notifyViewSuccessfulRegister(msg:String)
+    fun notifyViewShowDialogMessage(msg: String)
 }

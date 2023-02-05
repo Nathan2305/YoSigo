@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/rootConstraint"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootConstraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_as_service_background"
-    tools:context=".view.activities.RegisterAsServiceActivity">
+    tools:context=".view.activities.RegisterActivity">
+
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed-light"
         android:text="@string/registrate_como_empresa"
         android:textColor="@color/white"
-        android:textSize="28sp"
+        android:textSize="33sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/lLayout"
+        app:layout_constraintEnd_toEndOf="@id/gLineRight"
         app:layout_constraintStart_toStartOf="@id/gLineLeft"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.1" />
@@ -26,7 +28,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/LineRight"
+        app:layout_constraintEnd_toEndOf="@id/gLineRight"
         app:layout_constraintStart_toStartOf="@id/gLineLeft"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -48,6 +50,16 @@
             android:drawableStart="@drawable/ic_twotone_email_24"
             android:hint="@string/email"
             android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/txtAddress"
+            style="@style/editTextLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_baseline_add_location_24"
+            android:hint="@string/direcci_n"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/txtPassword"
@@ -78,11 +90,41 @@
         app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/LineRight"
+        android:id="@+id/gLineRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.9" />
+
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/spinkitLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:SpinKit_Style="ThreeBounce"
+        app:layout_constraintBottom_toTopOf="@id/fabRegister"
+        app:layout_constraintEnd_toEndOf="@id/lLayout"
+        app:layout_constraintStart_toStartOf="@id/lLayout"
+        app:layout_constraintTop_toBottomOf="@id/lLayout" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/wave"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lLayout" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrar"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/fabRegister"
+        app:layout_constraintStart_toStartOf="@id/fabRegister"
+        app:layout_constraintTop_toBottomOf="@id/fabRegister" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabRegister"
@@ -90,19 +132,9 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/fabRegister"
         android:src="@drawable/ic_twotone_app_registration_24"
+        app:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/lLayout"
         app:layout_constraintTop_toBottomOf="@id/lLayout"
         app:maxImageSize="40dp" />
-
-    <com.github.ybq.android.spinkit.SpinKitView
-        android:id="@+id/spinkitLoading"
-        android:visibility="gone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:SpinKit_Style="ThreeBounce"
-        app:layout_constraintBottom_toTopOf="@id/fabRegister"
-        app:layout_constraintEnd_toEndOf="@id/lLayout"
-        app:layout_constraintStart_toStartOf="@id/lLayout"
-        app:layout_constraintTop_toBottomOf="@id/lLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

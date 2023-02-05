@@ -12,30 +12,40 @@ class RegisterAsServiceModel(private val presenter: RegisterAsServicePresenter) 
     fun initRegister(
         businessName: String,
         txtEmail: String,
+        txtAddress: String,
         txtPassword: String,
         txtPasswordAgain: String
     ) {
-        if (businessName.isNotEmpty() and txtEmail.isNotEmpty() and txtPassword.isNotEmpty() and txtPasswordAgain.isNotEmpty()) {
+        if (businessName.isNotEmpty() and txtEmail.isNotEmpty() and txtAddress.isNotEmpty() and txtPassword.isNotEmpty() and txtPasswordAgain.isNotEmpty()) {
             if (txtPassword == txtPasswordAgain) {
                 presenter.notifyViewShowLoading()
                 val userAsService = BackendlessUser()
                 userAsService.email = txtEmail
                 userAsService.password = txtPassword
-                userAsService.setProperty(
-                    Constants.USER_AS_SERVICE_COLUMN_BUSINESS_NAME,
-                    businessName
-                )
-                Backendless.UserService.register(userAsService,
+                userAsService.setProperty(Constants.BACKEND_COLUMN_BUSINESS_NAME, businessName)
+                userAsService.setProperty(Constants.BACKEND_COLUMN_ADDRESS, txtAddress)
+                Backendless.UserService.register(
+                    userAsService,
                     object : AsyncCallback<BackendlessUser> {
-                        override fun handleResponse(response: BackendlessUser?) {
+                        override fun handleResponse(response: BackendlessUser) {
                             presenter.notifyViewStopLoading()
-                            presenter.notifyViewSuccessfulRegister()
+                            val msg =
+                                "Empresa ${response.properties[Constants.BACKEND_COLUMN_BUSINESS_NAME].toString()} registrada correctamente"
+                            presenter.notifyViewSuccessfulRegister(msg)
                         }
 
-                        override fun handleFault(fault: BackendlessFault?) {
-                            val msg = "Error registrando empresa: ${fault!!.message}"
-                            presenter.notifyViewStopLoading()
-                            presenter.notifyViewShowMessage(msg)
+                        override fun handleFault(fault: BackendlessFault) {
+                            //1155 duplicate businessName
+                            val errorCode = fault.code
+                            if (errorCode == "1155") {
+                                val msg="Ya existe una empresa con el nombre $businessName, si la empresa tiene más de 1 sede, te recomendamos agregar alguna descripción junto al nombre de la empresa para diferenciarla de la otra sede"
+                                presenter.notifyViewStopLoading()
+                                presenter.notifyViewShowDialogMessage(msg)
+                            } else {
+                                val msg = "Error registrando empresa: ${fault.message}"
+                                presenter.notifyViewStopLoading()
+                                presenter.notifyViewShowMessage(msg)
+                            }
                         }
 
                     })

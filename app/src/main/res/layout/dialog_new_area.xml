@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nueva área"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gLineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gLineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <EditText
+        android:id="@+id/valueArea"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nombre de area (obligatorio)"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="@id/gLineRight"
+        app:layout_constraintStart_toStartOf="@id/gLineLeft"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <EditText
+        android:id="@+id/descArea"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Descripción,¿Que se atiende en esta área, etc.?(obligatorio)"
+        android:singleLine="false"
+        app:layout_constraintEnd_toEndOf="@id/valueArea"
+        app:layout_constraintStart_toStartOf="@id/gLineLeft"
+        app:layout_constraintTop_toBottomOf="@id/valueArea" />
+
+    <EditText
+        android:id="@+id/floorArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Piso (obligatorio)"
+        android:inputType="number"
+        android:singleLine="true"
+        app:layout_constraintStart_toStartOf="@id/gLineLeft"
+        app:layout_constraintTop_toBottomOf="@id/descArea" />
+
+    <Button
+        android:id="@+id/btnCreate"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_btn_primary_color"
+        android:text="Crear"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@id/valueArea"
+        app:layout_constraintStart_toStartOf="@id/valueArea"
+        app:layout_constraintTop_toBottomOf="@id/floorArea" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_btn_primary_color"
+        android:text="Cancelar"
+        app:layout_constraintEnd_toEndOf="@id/valueArea"
+        app:layout_constraintStart_toStartOf="@id/valueArea"
+        app:layout_constraintTop_toBottomOf="@id/btnCreate" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="5dp"
+        android:text="Cancelar"
+        app:layout_constraintEnd_toEndOf="@id/btnCancel"
+        app:layout_constraintStart_toStartOf="@id/btnCancel"
+        app:layout_constraintTop_toBottomOf="@id/btnCancel" />
+</androidx.constraintlayout.widget.ConstraintLayout>

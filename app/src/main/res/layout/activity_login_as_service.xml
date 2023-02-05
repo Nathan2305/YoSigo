@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_as_service_background"
-    tools:context=".view.activities.MainLoginEnterAsService">
+    tools:context=".view.activities.LoginActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gLineLeft"
@@ -64,14 +64,14 @@
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/secondary"
         android:text="Ingresar"
         android:textSize="18sp"
+        android:background="@color/secondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/gLineRight"
         app:layout_constraintStart_toStartOf="@+id/gLineLeft"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85"
+        app:layout_constraintVertical_bias="0.84"
         tools:ignore="TextContrastCheck" />
 
     <TextView
@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:text="Registrate"
         android:textColor="@color/white"
-        android:textSize="17sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/btnLogin"
         app:layout_constraintTop_toBottomOf="@id/btnLogin"
@@ -92,7 +92,7 @@
         android:layout_height="wrap_content"
         android:text="¿Olvidaste tu contraseña?"
         android:textColor="@color/white"
-        android:textSize="17sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/btnLogin"
         app:layout_constraintTop_toBottomOf="@id/btnLogin"

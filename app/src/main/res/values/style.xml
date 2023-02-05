@@ -12,4 +12,18 @@
         <item name="android:textSize">18sp</item>
         <item name="android:layout_marginTop">5dp</item>
     </style>
+
+    <style name="editTextLogin" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_text_login</item>
+        <item name="android:padding">16sp</item>k
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:drawablePadding">3dp</item>
+    </style>
+
+    <style name="dialog_create_cat" parent="@style/Theme.AppCompat.Dialog.Alert">
+        <item name="android:windowMinWidthMinor">80%</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+    </style>
 </resources>

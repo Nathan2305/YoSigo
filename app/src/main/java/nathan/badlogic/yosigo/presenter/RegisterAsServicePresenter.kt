@@ -5,9 +5,9 @@ import nathan.badlogic.yosigo.view.interfaces.RegisterAsServiceView
 
 class RegisterAsServicePresenter(private var view: RegisterAsServiceView) {
     private val model = RegisterAsServiceModel(this)
-    fun initRegister(businessName: String,txtEmail: String,txtPassword: String,txtPasswordAgain: String
+    fun initRegister(businessName: String,txtEmail: String,txtAddress:String,txtPassword: String,txtPasswordAgain: String
     ) {
-        model.initRegister(businessName,txtEmail,txtPassword,txtPasswordAgain)
+        model.initRegister(businessName,txtEmail,txtAddress,txtPassword,txtPasswordAgain)
     }
 
     fun notifyViewShowMessage(msg: String) {
@@ -22,8 +22,12 @@ class RegisterAsServicePresenter(private var view: RegisterAsServiceView) {
         view.notifyViewStopLoading()
     }
 
-    fun notifyViewSuccessfulRegister() {
-        view.notifyViewSuccessfulRegister()
+    fun notifyViewSuccessfulRegister(msg:String) {
+        view.notifyViewSuccessfulRegister(msg)
+    }
+
+    fun notifyViewShowDialogMessage(msg: String) {
+        view.notifyViewShowDialogMessage(msg)
     }
 
 

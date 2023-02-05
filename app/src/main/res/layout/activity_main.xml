@@ -5,7 +5,7 @@
     android:id="@+id/rootConstraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activities.MainActivity">
+    tools:context=".view.activities.MainOptionsActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -60,10 +60,7 @@
         style="@style/buttonMainActivity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-
         android:background="@drawable/rounded_button"
-
-
         android:text="@string/ingresar_usuario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/gLineRight"
@@ -80,4 +77,6 @@
         android:text="@string/que_significa"
         app:layout_constraintEnd_toEndOf="@id/btnEnterAsUser"
         app:layout_constraintTop_toBottomOf="@id/btnEnterAsUser" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

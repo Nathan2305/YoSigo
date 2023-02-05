@@ -1,9 +1,11 @@
 package nathan.badlogic.yosigo.view.activities
 
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.github.ybq.android.spinkit.SpinKitView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -12,10 +14,11 @@ import nathan.badlogic.yosigo.Utils.StaticMethods
 import nathan.badlogic.yosigo.presenter.RegisterAsServicePresenter
 import nathan.badlogic.yosigo.view.interfaces.RegisterAsServiceView
 
-class RegisterAsServiceActivity : AppCompatActivity(), RegisterAsServiceView {
+class RegisterActivity : AppCompatActivity(), RegisterAsServiceView {
     private lateinit var rootConstraint: ConstraintLayout
     private lateinit var txtBusinessName: EditText
     private lateinit var txtEmail: EditText
+    private lateinit var txtAddress: EditText
     private lateinit var txtPassword: EditText
     private lateinit var txtPasswordAgain: EditText
     private lateinit var fabRegister: FloatingActionButton
@@ -35,11 +38,13 @@ class RegisterAsServiceActivity : AppCompatActivity(), RegisterAsServiceView {
         fabRegister.setOnClickListener {
             val businessName = txtBusinessName.text.toString()
             val txtEmail = txtEmail.text.toString()
+            val txtAddress = txtAddress.text.toString()
             val txtPassword = txtPassword.text.toString()
             val txtPasswordAgain = txtPasswordAgain.text.toString()
             presenterRegisterAsService.initRegister(
                 businessName,
                 txtEmail,
+                txtAddress,
                 txtPassword,
                 txtPasswordAgain
             )
@@ -51,6 +56,7 @@ class RegisterAsServiceActivity : AppCompatActivity(), RegisterAsServiceView {
         rootConstraint = findViewById(R.id.rootConstraint)
         txtBusinessName = findViewById(R.id.txtBusinessName)
         txtEmail = findViewById(R.id.txtEmail)
+        txtAddress = findViewById(R.id.txtAddress)
         txtPassword = findViewById(R.id.txtPassword)
         txtPasswordAgain = findViewById(R.id.txtPasswordAgain)
         spinkitLoading = findViewById(R.id.spinkitLoading)
@@ -71,8 +77,26 @@ class RegisterAsServiceActivity : AppCompatActivity(), RegisterAsServiceView {
         enableViews(true)
     }
 
-    override fun notifyViewSuccessfulRegister() {
+    override fun notifyViewSuccessfulRegister(msg: String) {
+        notifyViewShowMessage(msg)
         finish()
+    }
+
+    override fun notifyViewShowDialogMessage(msg: String) {
+        val builder = AlertDialog.Builder(this)
+        with(builder) {
+            setTitle("Error registrando empresa")
+            setIcon(R.drawable.ic_twotone_error_24)
+            setMessage(msg)
+            setCancelable(false)
+            setPositiveButton("Aceptar", object : DialogInterface.OnClickListener {
+                override fun onClick(p0: DialogInterface?, p1: Int) {
+                    p0!!.cancel()
+                }
+            })
+            val alertDialog=builder.create()
+            alertDialog.show()
+        }
     }
 
     private fun enableViews(enableView: Boolean) {
