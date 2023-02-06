@@ -70,7 +70,7 @@ class MainProfileActivity : AppCompatActivity(), MainProfileView, (Area) -> Unit
             lateinit var newAreaValue: String
             lateinit var newDescAreaValue: String
             lateinit var newFloorAreaValue: String
-            val builder = AlertDialog.Builder(this, R.style.dialog_create_cat)
+            val builder = AlertDialog.Builder(this/*, R.style.dialog_create_cat*/)
             with(builder) {
                 val inflater = LayoutInflater.from(context)
                 val view = inflater.inflate(R.layout.dialog_new_area, null)

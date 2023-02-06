@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/secondary"
+        android:background="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +33,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/secondary"
+        android:background="@color/primary"
         app:layout_constraintBottom_toBottomOf="@id/glineHorizontalViewColor"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
@@ -165,7 +165,6 @@
         android:layout_marginEnd="15dp"
         android:src="@drawable/ic_twotone_add_24"
         app:elevation="10dp"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.99"
@@ -187,13 +186,13 @@
 
     <com.github.ybq.android.spinkit.SpinKitView
         android:id="@+id/spinkitLoading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:visibility="gone"
-        app:SpinKit_Color="@color/primary"
+        app:SpinKit_Color="@color/secondary"
         app:SpinKit_Style="Circle"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,8 +12,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+        android:theme="@style/Theme.YoSigo.NoActionBar"
         tools:targetApi="31">
+        <activity
+            android:name=".AreaSelectedActivity"
+            android:exported="false" />
         <activity
             android:name=".view.activities.MainValidatePreviousLoginActivity"
             android:exported="true">
@@ -44,13 +47,6 @@
         </activity>
         <activity
             android:name=".view.activities.RegisterActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".view.activities.MainOptionsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

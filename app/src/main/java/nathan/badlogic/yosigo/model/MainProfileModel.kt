@@ -20,6 +20,7 @@ class MainProfileModel(private var presenter: MainProfilePresenter) {
     }
 
     private fun loadCategories(dataQuery: DataQueryBuilder) {
+        presenter.notifyViewShowSpinkitLoading(true)
         Backendless.Persistence.of(Area::class.java).find(dataQuery, object : AsyncCallback<List<Area>> {
                 override fun handleResponse(listFound: List<Area>) {
                     if (listFound.isNotEmpty()) {
@@ -33,8 +34,10 @@ class MainProfileModel(private var presenter: MainProfilePresenter) {
                             presenter.notifyViewShowEmptyCategories()
                         }
                     }
+                    presenter.notifyViewShowSpinkitLoading(false)
                 }
                 override fun handleFault(fault: BackendlessFault?) {
+                    presenter.notifyViewShowSpinkitLoading(false)
                     val msg = "Error cargando áreas: ${fault!!.message}"
                     presenter.notifyViewShowInfo(msg)
                 }

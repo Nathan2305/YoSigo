@@ -78,7 +78,7 @@
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/rounded_btn_primary_color"
+        android:background="@drawable/rounded_btn_secondary_color"
         android:text="Cancelar"
         app:layout_constraintEnd_toEndOf="@id/valueArea"
         app:layout_constraintStart_toStartOf="@id/valueArea"
