@@ -19,6 +19,7 @@ import com.backendless.Backendless
 import com.backendless.async.callback.AsyncCallback
 import com.backendless.exceptions.BackendlessFault
 import com.github.ybq.android.spinkit.SpinKitView
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import nathan.badlogic.yosigo.R
 import nathan.badlogic.yosigo.Utils.AdapterAreas
@@ -136,29 +137,20 @@ class MainProfileActivity : AppCompatActivity(), MainProfileView, (Area) -> Unit
     }
 
     private fun initLogOut() {
-        val builder = AlertDialog.Builder(this)
-        with(builder) {
-            val inflater = LayoutInflater.from(context)
-            val view = inflater.inflate(R.layout.dialog_logging_out, null, false)
-            setView(view)
-            setCancelable(false)
+        val bottomSheetDialog = BottomSheetDialog(this)
+        bottomSheetDialog.setContentView(R.layout.bottom_sheet_log_out)
+        bottomSheetDialog.show()
+        val btnAccept: Button? = bottomSheetDialog.findViewById(R.id.btnAccept)
+        val btnCancel: Button? = bottomSheetDialog.findViewById(R.id.btnCancel)
+        btnCancel?.setOnClickListener {
+            bottomSheetDialog.dismiss()
         }
-        val alertDialog = builder.create()
-        alertDialog.show()
-        Backendless.UserService.logout(object : AsyncCallback<Void> {
-            override fun handleResponse(response: Void?) {
-                alertDialog.dismiss()
-                val intent = Intent(applicationContext, LoginActivity::class.java).apply {
-                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                }
-                startActivity(intent)
-            }
+        btnAccept?.setOnClickListener {
+            bottomSheetDialog.dismiss()
+            notifyViewShowSpinkitLoading(true)
+            presenterMainProfile.initLogOut()
 
-            override fun handleFault(fault: BackendlessFault?) {
-                alertDialog.dismiss()
-            }
         }
-        )
     }
 
     override fun notifyViewShowAllCategories(listCategories: MutableList<Area>) {
@@ -194,6 +186,13 @@ class MainProfileActivity : AppCompatActivity(), MainProfileView, (Area) -> Unit
         StaticMethods.showToast(this, msg)
     }
 
+    override fun notifyViewSuccessfulLogOut() {
+        val intent = Intent(applicationContext, LoginActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+        startActivity(intent)
+    }
+
     private fun enableView(enableViews: Boolean) {
         fabAddCategory.isEnabled = enableViews
         fabAddCategory.isClickable = enableViews
@@ -206,6 +205,11 @@ class MainProfileActivity : AppCompatActivity(), MainProfileView, (Area) -> Unit
 
     override fun invoke(area: Area) {
         val areaSelected = area.name
-        StaticMethods.showToast(this, areaSelected)
+        val intent=Intent(this,AreaSelectedActivity::class.java).apply {
+            putExtra("areaSelected",areaSelected)
+            putExtra("businessObjectId",businessObjectId)
+        }
+        startActivity(intent)
+
     }
 }

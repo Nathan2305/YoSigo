@@ -8,6 +8,7 @@ interface MainProfileView {
     fun notifyViewShowSpinkitLoading(enableViews: Boolean)
     fun notifyViewSuccessfulAreaCreated(areaName: String, newListUpdated: MutableList<Area>)
     fun notifyViewShowInfo(msg: String)
+    fun notifyViewSuccessfulLogOut()
 
 
 }

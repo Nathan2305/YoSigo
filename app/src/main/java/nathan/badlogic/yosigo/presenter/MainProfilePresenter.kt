@@ -37,5 +37,13 @@ class MainProfilePresenter(private var presenterView: MainProfileView) {
 
     }
 
+    fun initLogOut() {
+        model.initLogOut()
+    }
+
+    fun notifyViewSuccessfulLogOut() {
+        presenterView.notifyViewSuccessfulLogOut()
+    }
+
 
 }

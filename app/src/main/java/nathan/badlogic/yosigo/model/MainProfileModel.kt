@@ -1,11 +1,14 @@
 package nathan.badlogic.yosigo.model
 
+import android.content.Intent
 import com.backendless.Backendless
 import com.backendless.async.callback.AsyncCallback
 import com.backendless.exceptions.BackendlessFault
 import com.backendless.persistence.DataQueryBuilder
+import nathan.badlogic.yosigo.Utils.StaticMethods
 import nathan.badlogic.yosigo.dao.Area
 import nathan.badlogic.yosigo.presenter.MainProfilePresenter
+import nathan.badlogic.yosigo.view.activities.LoginActivity
 
 class MainProfileModel(private var presenter: MainProfilePresenter) {
     var listCategories = mutableListOf<Area>()
@@ -21,7 +24,8 @@ class MainProfileModel(private var presenter: MainProfilePresenter) {
 
     private fun loadCategories(dataQuery: DataQueryBuilder) {
         presenter.notifyViewShowSpinkitLoading(true)
-        Backendless.Persistence.of(Area::class.java).find(dataQuery, object : AsyncCallback<List<Area>> {
+        Backendless.Persistence.of(Area::class.java)
+            .find(dataQuery, object : AsyncCallback<List<Area>> {
                 override fun handleResponse(listFound: List<Area>) {
                     if (listFound.isNotEmpty()) {
                         listCategories.addAll(listFound)
@@ -36,13 +40,14 @@ class MainProfileModel(private var presenter: MainProfilePresenter) {
                     }
                     presenter.notifyViewShowSpinkitLoading(false)
                 }
+
                 override fun handleFault(fault: BackendlessFault?) {
                     presenter.notifyViewShowSpinkitLoading(false)
                     val msg = "Error cargando áreas: ${fault!!.message}"
                     presenter.notifyViewShowInfo(msg)
                 }
             }
-        )
+            )
     }
 
     fun createNewArea(newAreaValue: String, newDescAreaValue: String, newFloorAreaValue: String) {
@@ -67,6 +72,22 @@ class MainProfileModel(private var presenter: MainProfilePresenter) {
             override fun handleFault(fault: BackendlessFault?) {
                 presenter.notifyViewShowSpinkitLoading(false)
                 val msg = "Error creando área: ${fault!!.message}"
+                presenter.notifyViewShowInfo(msg)
+            }
+        })
+    }
+
+    fun initLogOut() {
+        presenter.notifyViewShowSpinkitLoading(true)
+        Backendless.UserService.logout(object : AsyncCallback<Void> {
+            override fun handleResponse(response: Void?) {
+                presenter.notifyViewSuccessfulLogOut()
+                presenter.notifyViewShowSpinkitLoading(false)
+            }
+
+            override fun handleFault(fault: BackendlessFault?) {
+                presenter.notifyViewShowSpinkitLoading(false)
+                val msg = "Error cerrando sesión: ${fault!!.message}"
                 presenter.notifyViewShowInfo(msg)
             }
         })
