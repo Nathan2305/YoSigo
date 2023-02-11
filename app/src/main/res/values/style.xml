@@ -21,11 +21,11 @@
 
     <style name="editTextLogin" parent="@style/Widget.AppCompat.EditText">
         <item name="android:background">@drawable/edit_text_login</item>
-        <item name="android:padding">14sp</item>k
-        <item name="android:textSize">18sp</item>
+        <item name="android:padding">@dimen/editText_TextPadding</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textColorHint">@color/white</item>
         <item name="android:drawablePadding">3dp</item>
+        <item name="android:textSize">@dimen/editText_TextSize</item>
     </style>
 
     <style name="dialog_create_cat" parent="@style/Theme.AppCompat.Dialog.Alert">

@@ -20,7 +20,7 @@
     <TextView
         android:id="@+id/msg"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:text="@string/registrate_como_empresa"
         android:textColor="@color/white"
         android:textStyle="bold"
@@ -30,54 +30,60 @@
         app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="@id/gLineRight"
         app:layout_constraintStart_toStartOf="@id/gLineLeft"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gLineCenterVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
     <EditText
         android:id="@+id/txtBusinessName"
         style="@style/editTextLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
         android:drawableStart="@drawable/ic_twotone_business_24"
         android:hint="@string/nombre_de_la_empresa"
         android:inputType="text"
         android:textSize="@dimen/editText_TextSize"
-        app:layout_constraintBottom_toTopOf="@+id/txtEmail"
-        app:layout_constraintEnd_toEndOf="@id/gLineRight"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gLineCenterVertical"
         app:layout_constraintStart_toStartOf="@id/gLineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/msg" />
+        app:layout_constraintTop_toBottomOf="@id/msg"
+        app:layout_constraintVertical_bias="0.15" />
 
     <EditText
         android:id="@+id/txtEmail"
         style="@style/editTextLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/editText_TextSize"
+        android:layout_marginStart="3dp"
         android:drawableStart="@drawable/ic_twotone_email_24"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/txtAddress"
+        android:textSize="@dimen/editText_TextSize"
+        app:layout_constraintBottom_toBottomOf="@id/txtBusinessName"
         app:layout_constraintEnd_toEndOf="@id/gLineRight"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/gLineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/txtBusinessName" />
+        app:layout_constraintStart_toStartOf="@id/gLineCenterVertical"
+        app:layout_constraintTop_toTopOf="@id/txtBusinessName" />
 
     <EditText
         android:id="@+id/txtAddress"
         style="@style/editTextLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/editText_TextSize"
+        android:layout_marginEnd="10dp"
         android:drawableStart="@drawable/ic_baseline_add_location_24"
         android:hint="@string/direcci_n"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/txtPassword"
-        app:layout_constraintEnd_toEndOf="@id/gLineRight"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/gLineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+        android:textSize="@dimen/editText_TextSize"
+        app:layout_constraintBottom_toTopOf="@id/txtPassword"
+        app:layout_constraintEnd_toStartOf="@id/textView"
+        app:layout_constraintStart_toStartOf="@id/txtBusinessName"
+        app:layout_constraintTop_toBottomOf="@id/txtBusinessName" />
 
     <EditText
         android:id="@+id/txtPassword"
@@ -88,28 +94,25 @@
         android:hint="@string/contrasena"
         android:inputType="textPassword"
         android:textSize="@dimen/editText_TextSize"
-        app:layout_constraintBottom_toTopOf="@+id/txtPasswordAgain"
-        app:layout_constraintEnd_toEndOf="@id/gLineRight"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/gLineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/txtBusinessName"
+        app:layout_constraintStart_toStartOf="@id/txtBusinessName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
 
     <EditText
         android:id="@+id/txtPasswordAgain"
         style="@style/editTextLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:drawableStart="@drawable/ic_twotone_vpn_key_24"
         android:hint="@string/repetir_contrasena"
-        android:textSize="@dimen/editText_TextSize"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/view2"
-        app:layout_constraintEnd_toEndOf="@id/gLineRight"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/gLineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/txtPassword"
-        app:layout_constraintVertical_bias="0.94" />
+        android:textSize="@dimen/editText_TextSize"
+        app:layout_constraintBottom_toBottomOf="@id/txtPassword"
+        app:layout_constraintEnd_toEndOf="@id/txtEmail"
+        app:layout_constraintStart_toStartOf="@id/txtEmail"
+        app:layout_constraintTop_toTopOf="@id/txtPassword" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -117,14 +120,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1" />
+        app:layout_constraintGuide_percent="0.05" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gLineRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent="0.95" />
 
 
     <com.github.ybq.android.spinkit.SpinKitView
@@ -145,27 +148,29 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.8" />
 
-    <View
-        android:id="@+id/view2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/wave"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/gLineView" />
+    <!--   <View
+           android:id="@+id/view2"
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           android:background="@drawable/wave"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/gLineView" />-->
 
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
         android:text="Registrar"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/fabRegister"
-        app:layout_constraintStart_toStartOf="@id/fabRegister"
-        app:layout_constraintTop_toBottomOf="@id/fabRegister" />
+        app:layout_constraintBottom_toBottomOf="@id/fabRegister"
+        app:layout_constraintEnd_toStartOf="@id/fabRegister"
+        app:layout_constraintTop_toTopOf="@id/fabRegister" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabRegister"
@@ -174,10 +179,8 @@
         android:contentDescription="@string/fabRegister"
         android:src="@drawable/ic_twotone_app_registration_24"
         app:elevation="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/txtPassword"
         app:layout_constraintEnd_toEndOf="@id/gLineRight"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.93"
-
+        app:layout_constraintTop_toBottomOf="@id/txtBusinessName"
         app:maxImageSize="40dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

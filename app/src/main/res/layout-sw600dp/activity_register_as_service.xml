@@ -20,12 +20,12 @@
     <TextView
         android:id="@+id/msg"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:text="@string/registrate_como_empresa"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:autoSizeMaxTextSize="100sp"
-        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMinTextSize="15sp"
         app:autoSizeStepGranularity="2sp"
         app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="@id/gLineRight"
@@ -117,14 +117,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1" />
+        app:layout_constraintGuide_percent="0.15" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gLineRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent="0.85" />
 
 
     <com.github.ybq.android.spinkit.SpinKitView

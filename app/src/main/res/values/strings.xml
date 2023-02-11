@@ -23,53 +23,13 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="direcci_n">Dirección</string>
 
-    <!--
-    <string-array name="distritos">
-        <string name="distrito1">Ancón</string>
-        <string name="distrito2">Ate</string>
-        <string name="distrito3">Barranco</string>
-        <string name="distrito4">Breña</string>
-        <string name="distrito5">Carabayllo</string>
-        <string name="distrito6">Cercado de Lima</string>
-        <string name="distrito7">Chaclacayo</string>
-        <string name="distrito8">Chorrillos</string>
-        <string name="distrito9">Cieneguilla</string>
-        <string name="distrito10">Comas</string>
-        <string name="distrito11">El agustino</string>
-        <string name="distrito12">Independencia</string>
-        <string name="distrito13">Jesús maría</string>
-        <string name="distrito14">La molina</string>
-        <string name="distrito15">La victoria</string>
-        <string name="distrito16">Lince</string>
-        <string name="distrito17">Los olivos</string>
-        <string name="distrito18">Lurigancho</string>
-        <string name="distrito19">Lurín</string>
-        <string name="distrito20">Magdalena del mar</string>
-        <string name="distrito21">Miraflores</string>
-        <string name="distrito22">Pachacámac</string>
-        <string name="distrito23">Pucusana</string>
-        <string name="distrito24">Pueblo libre</string>
-        <string name="distrito25">Puente piedra</string>
-        <string name="distrito26">Punta hermosa</string>
-        <string name="distrito27">Punta negra</string>
-        <string name="distrito28">Rímac</string>
-        <string name="distrito29">San bartolo</string>
-        <string name="distrito30">San borja</string>
-        <string name="distrito31">San isidro</string>
-        <string name="distrito32">San Juan de Lurigancho</string>
-        <string name="distrito33">San Juan de Miraflores</string>
-        <string name="distrito34">San Luis</string>
-        <string name="distrito35">San Martin de Porres</string>
-        <string name="distrito36">San Miguel</string>
-        <string name="distrito37">Santa Anita</string>
-        <string name="distrito38">Santa María del Mar</string>
-        <string name="distrito39">Santa Rosa</string>
-        <string name="distrito40">Santiago de Surco</string>
-        <string name="distrito41">Surquillo</string>
-        <string name="distrito42">Villa el Salvador</string>
-        <string name="distrito43">Villa Maria del Triunfo</string>
-    </string-array>
-    -->
+    <array name="autosize_text_sizes">
+        <item>10sp</item>
+        <item>12sp</item>
+        <item>20sp</item>
+        <item>40sp</item>
+        <item>100sp</item>
+    </array>
 
 
 </resources>
