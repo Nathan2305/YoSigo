@@ -40,7 +40,7 @@
                 android:layout_height="55dp"
                 android:gravity="center_vertical"
                 android:textColor="@color/white"
-                app:autoSizePresetSizes="@array/autosize_text_sizes"
+
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +54,6 @@
                 android:gravity="center_vertical"
                 android:text="12 personas esperando"
                 android:textColor="@color/white"
-                app:autoSizePresetSizes="@array/autosize_text_sizes"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/areaName"

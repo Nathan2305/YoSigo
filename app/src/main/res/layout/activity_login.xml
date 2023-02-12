@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"
         android:autofillHints="true"
         android:hint="Email"
+        android:drawableStart="@drawable/ic_twotone_email_24"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/gLineRight"
@@ -39,6 +40,7 @@
     <EditText
         android:id="@+id/txtPasswd"
         style="@style/editTextLogin"
+        android:drawableStart="@drawable/ic_twotone_vpn_key_24"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"

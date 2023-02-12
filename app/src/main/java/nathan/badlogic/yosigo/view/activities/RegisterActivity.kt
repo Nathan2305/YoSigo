@@ -30,7 +30,7 @@ class RegisterActivity : AppCompatActivity(), RegisterAsServiceView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register_as_service)
+        setContentView(R.layout.activity_register)
         initUI()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         initUIClick()

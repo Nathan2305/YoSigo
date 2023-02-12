@@ -20,12 +20,12 @@
     <TextView
         android:id="@+id/msg"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:text="@string/registrate_como_empresa"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:autoSizeMaxTextSize="100sp"
-        app:autoSizeMinTextSize="15sp"
+        app:autoSizeMinTextSize="12sp"
         app:autoSizeStepGranularity="2sp"
         app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="@id/gLineRight"
@@ -117,14 +117,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.15" />
+        app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gLineRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.85" />
+        app:layout_constraintGuide_percent="0.9" />
 
 
     <com.github.ybq.android.spinkit.SpinKitView
@@ -159,13 +159,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registrar"
+        android:text="@string/fabRegister"
+        android:layout_marginEnd="10dp"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/fabRegister"
-        app:layout_constraintStart_toStartOf="@id/fabRegister"
-        app:layout_constraintTop_toBottomOf="@id/fabRegister" />
+        app:layout_constraintEnd_toStartOf="@id/fabRegister"
+        app:layout_constraintTop_toTopOf="@id/fabRegister"
+        app:layout_constraintBottom_toBottomOf="@id/fabRegister"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabRegister"
@@ -177,7 +178,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/gLineRight"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.93"
+        app:layout_constraintVertical_bias="0.98"
 
         app:maxImageSize="40dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

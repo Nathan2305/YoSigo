@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity(), MainLoginView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login_as_service)
+        setContentView(R.layout.activity_login)
         initUI()
         //initBackendless()
         presenterMainLogin = MainLoginPresenter(this)

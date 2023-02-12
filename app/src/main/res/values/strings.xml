@@ -3,33 +3,17 @@
     <string name="elejir_opcion">Bienvenid@, \nelija una opción</string>
     <string name="ingresar_empresa">Ingresar como entidad \n prestadora de servicios</string>
     <string name="ingresar_usuario">Ingresar como usuario</string>
-    <string name="que_significa">¿Que significa?</string>
-    <string name="txtAsService">Significa que te registrarás como alguna empresa o servicio que haga uso</string>
-    <string name="txtAsUser">Significa que ingresarás como usuario para hacer uso de los servicios de la empresa</string>
     <string name="nombre_de_la_empresa">Nombre de la empresa</string>
     <string name="email">Email</string>
     <string name="contrasena">Contraseña</string>
     <string name="repetir_contrasena">Repetir contraseña</string>
-    <string name="fabRegister">fabRegister</string>
+    <string name="fabRegister">Registrar -></string>
     <string name="registrate_como_empresa">Registrate como empresa</string>
     <string name="title_activity_login_as_service">LoginAsServiceActivity</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
     <string name="direcci_n">Dirección</string>
-
-    <array name="autosize_text_sizes">
-        <item>10sp</item>
-        <item>12sp</item>
-        <item>20sp</item>
-        <item>40sp</item>
-        <item>100sp</item>
-    </array>
-
+    <string name="bienvenido">Bienvenido.\nInicia sesión</string>
 
 </resources>
